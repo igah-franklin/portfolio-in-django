@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'myresume.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dl2jqf2u0a0qv',
-        'HOST': 'ec2-44-195-201-3.compute-1.amazonaws.com',
+        'NAME': 'ddkj0vspagk348',
+        'HOST': 'ec2-18-235-4-83.compute-1.amazonaws.com',
         'PORT': '5432',
-        'USER': 'bhtaivmoaypnsm',
-        'PASSWORD': '2b8da8a9c46c63f7241fe672fc57c69a305b6ed805da96d3a7e146685f1f316f'
+        'USER': 'yijsnbojhbizfz',
+        'PASSWORD': '105dbffb2fd131d22ef42bca945db200c9a3001c1b534fac09d58f3fa23dedb8'
     }
 }
 
