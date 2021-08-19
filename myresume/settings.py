@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-n+_5f04&9vycnkooq(_xyhaveo(la2(_a$_)ug1jvy!wmgrtm$"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'whitenoise.middleware.WhiteNoiseMiddleWare'
+    'whitenoise.middleware.WhiteNoiseMiddleWare',
 ]
 
 ROOT_URLCONF = 'myresume.urls'
@@ -81,18 +81,16 @@ WSGI_APPLICATION = 'myresume.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dl2jqf2u0a0qv',
+        'HOST': 'ec2-44-195-201-3.compute-1.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'bhtaivmoaypnsm',
+        'PASSWORD': '2b8da8a9c46c63f7241fe672fc57c69a305b6ed805da96d3a7e146685f1f316f'
     }
-else:
-    print("Postgres URL not found, using sqlite instead==================")
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+}
 
 
 # Password validation
