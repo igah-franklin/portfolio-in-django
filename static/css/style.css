@@ -10,8 +10,8 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/mypi.png") top right no-repeat;
-  background-size: cover;
+  background: #040404 url("../img/mypic.png") bottom right no-repeat;
+  background-size: center;
   left: 0;
   right: 0;
   top: 0;
