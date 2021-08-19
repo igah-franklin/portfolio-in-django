@@ -1,16 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends 'resumeApp/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900&display=swap');
+    html,body {
+    font-family: 'Raleway', sans-serif;  
+}
+.thankyou-page ._header {
+    background: #fee028;
+    padding: 100px 30px;
+    text-align: center;
+    background: #000 url(https://codexcourier.com/images/main_page.jpg) center/cover no-repeat;
+}
+.thankyou-page ._header .logo {
+    max-width: 200px;
+    margin: 0 auto 50px;
+}
+.thankyou-page ._header .logo img {
+    width: 100%;
+}
+.thankyou-page ._header h1 {
+    font-size: 65px;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+}
+.thankyou-page ._body {
+    margin: -70px 0 30px;
+}
+.thankyou-page ._body ._box {
+    margin: auto;
+    max-width: 80%;
+    padding: 50px;
+    background: #0f1520;
+    border-radius: 3px;
+    box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+    -moz-box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+    -webkit-box-shadow: 0 0 35px rgba(10, 10, 10,0.12);
+}
+.thankyou-page ._body ._box h2 {
+    font-size: 27px;
+    font-weight: 500;
+    color: #fff;
+}
+.thankyou-page ._footer {
+    text-align: center;
+    padding: 50px 30px;
+}
+
+.thankyou-page ._footer .btn {
+    background: #000;
+    color: white;
+    border: 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 0;
+    letter-spacing: 0.8px;
+    padding: 20px 33px;
+    text-transform: uppercase;
+}
+    </style>
 </head>
-<body>
-    successfull
 
-    hello {{contact.name}}, your message has been recieved, thanks!
-
-    if you submitted the right email, Please check your email for more details
-</body>
-</html>
+    
+    <div class="thankyou-page">
+        <div class="_header">
+            <div class="logo">
+                <img src="https://codexcourier.com/images/banner-logo.png" alt="">
+            </div>
+            <h1>Hi,  {%if messages%}{%for message in messages%} {{message}} {%endfor%} {%endif%}</h1>
+        </div>
+        <div class="_body">
+            <div class="_box">
+                <h2 style="text-align: center;">
+                    Thanks a bunch for filling the out. <span style="color: #fee028;">It means a lot to me</span>, just like you do! 
+                    <span style="color: #fee028;"><br> I will get in touch with you in a moment</span>, thanks once again!
+                </h2>
+                <p>
+                </p>
+            </div>
+        </div>
+        <div class="_footer">
+            <a class="btn" href="{% url 'index' %}">Back to homepage</a>
+        </div>
+    </div>
+    {% endblock content %}
