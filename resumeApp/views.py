@@ -22,7 +22,7 @@ def index(request):
             subject = subject,
             message = message
         ).save()
-        send_mail_after_registration(email)
+        #send_mail_after_registration(email)
         return redirect('success')
     
     return render(request, 'resumeApp/index.html', {'contact':contact})
