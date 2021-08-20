@@ -24,7 +24,7 @@ def index(request):
                 subject = subject,
                 message = message
             ).save()
-            send_mail_after_registration(email)
+            #send_mail_after_registration(email)
             messages.success(request, name)
             return redirect('success')
         except:
